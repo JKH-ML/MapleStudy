@@ -1,3 +1,8 @@
+# 코랩에 코드 복사하기
+# gemini 탭 열고 프롬프트에 다음과 같이 입력
+# "이 코드에 기반하여 이미지를 저장해서 zip파일로 압축해서 
+# 내 컴퓨터에 저장하는 코드로 수정해줘"
+
 import requests
 from bs4 import BeautifulSoup
 import os
