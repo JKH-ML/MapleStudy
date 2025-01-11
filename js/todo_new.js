@@ -8,12 +8,12 @@ let toDos = [];
 // when del <button> clicked
 function delToDo(event){
     event.preventDefault();
+    event.stopPropagation();  // 이벤트 전파 중지
     const target_li = event.target.parentElement;
     target_li.remove();
     // toDos에서 삭제   
     toDos = toDos.filter(toDo => toDo.id !== parseInt(target_li.id));
     saveToDo();
-
 }
 
 // 처음 로드될 때, 또는 새로운 할일 추가될 때
@@ -23,7 +23,10 @@ function drawToDo(newToDoObj){
     const new_span = document.createElement("span");
     const new_button = document.createElement("button");
     new_button.innerText = "삭제";
-    new_button.addEventListener("click", delToDo);
+    new_button.addEventListener("click", (e) => {
+        e.stopPropagation();  // 이벤트 전파 중지
+        delToDo(e);
+    });
     new_li.appendChild(new_span);
     new_li.appendChild(new_button);
     new_span.innerText = newToDoObj.text;

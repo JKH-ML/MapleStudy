@@ -1,3 +1,533 @@
+/* 폰트 등록 */
+@font-face {
+  font-family: 'MaplestoryLight';
+  src: url('../fonts/MaplestoryLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'MaplestoryLight', 'Segoe UI', Arial, sans-serif;
+  height: 100vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* 배경 이미지 스타일 */
+body > img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.7);
+}
+
+/* 로그인 폼 */
+#login-form {
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#login-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#login-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #ffd700;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#login-form button:hover {
+  background: #ffed4a;
+  transform: scale(1.05);
+}
+
+/* 시계 */
+#clock {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#clock .ampm {
+  font-size: 1.2rem;
+  vertical-align: top;
+  margin-left: 5px;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+
+/* 인사말 */
+#greeting {
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffd700;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 할 일 목록 컨테이너 */
+#todo-form {
+  margin: 20px 0;
+}
+
+/* 투두 입력 폼 스타일 수정 */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#todo-form input {
+  width: 100%;
+  padding: 10px 35px 10px 15px;  /* 오른쪽 패딩 증가 */
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+.input-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);  /* 엔터 키 모양으로 회전 */
+  color: #666;
+  font-size: 16px;
+  pointer-events: none;  /* 아이콘이 입력을 방해하지 않도록 */
+  opacity: 0.7;
+}
+
+#todo-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
+}
+
+#todo-form input:focus + i {
+  color: #ffd700;
+  opacity: 1;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todo-list li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-list button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#todo-list button:hover {
+  background: #ff6666;
+}
+
+/* 명언 */
+#quote {
+  position: fixed;
+  bottom: 30px;
+  left: 50px;
+  text-align: left;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+#quote span {
+  display: block;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#quote-text {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+#quote-author {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #ffd700;
+  text-align: right;
+  margin-top: 5px;
+}
+
+#quote-author::before {
+  content: "- ";
+}
+
+/* 날씨 */
+#weather {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* 유틸리티 클래스 */
 .hidden {
   display: none;
+}
+
+/* 로고 스타일 */
+#logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+#logo img {
+  width: 100px;  /* 로고 크기는 필요에 따라 조절하세요 */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#logo img:hover {
+  transform: scale(1.05);
+}
+
+/* 메뉴 버튼들의 기본 스타일 */
+#menu-button {
+  position: fixed;
+  top: 140px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+#timer-button {
+  position: fixed;
+  top: 350px;  /* 충분한 간격 */
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* 호버 효과 */
+#menu-button:hover,
+#timer-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 215, 0, 0.4);
+}
+
+/* 아이콘 스타일 */
+#menu-button i,
+#timer-button i {
+  font-size: 24px;
+  color: #000;
+}
+
+/* 활성화 상태 */
+#menu-button.active {
+  left: 260px;
+}
+
+#timer-button.active {
+  left: 260px;
+}
+
+/* 메뉴 모달 스타일 수정 */
+#menu-modal {
+  position: fixed;
+  top: 0;
+  left: -300px; /* 시작 위치 */
+  width: 300px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+  visibility: visible; /* 추가 */
+}
+
+#menu-modal.show {
+  left: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  margin-top: 60px;
+  height: calc(100% - 80px);
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#saved-todos {
+  margin-bottom: 20px;
+}
+
+/* 퀵 링크 스타일 수정 */
+.quick-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 100;
+}
+
+.links-row {
+  display: flex;
+  gap: 6px;
+}
+
+.quick-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffd700;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 6px;
+  text-align: center;
+}
+
+.quick-links a i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.quick-links a span {
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.quick-links a:hover {
+  background: rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* 타이머 버튼 스타일 */
+#timer-button {
+  position: fixed;
+  top: 210px;  /* menu-button + 70px */
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(255, 215, 0, 0.9);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+#timer-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 215, 0, 1);
+}
+
+#timer-button i {
+  font-size: 24px;
+  color: #000;
+}
+
+/* 타이머 모달 스타일 */
+#timer-modal {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+}
+
+#timer-modal.show {
+  left: 0;
+}
+
+#timer-button.active {
+  left: 260px;
+}
+
+/* 볼륨 컨트롤 스타일 추가 */
+#volume-control {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+#volume-control i {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+#volume-slider {
+  width: 100px;
+  height: 5px;
+  -webkit-appearance: none;
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 5px;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #ffd700;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#volume-value {
+  color: #ffd700;
+  min-width: 45px;
+  text-align: left;
+}
+
+/* 날씨 컨테이너 스타일 */
+#weather-container {
+  position: fixed;
+  top: 55px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+#weather-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#weather-button i {
+  font-size: 24px;
+  color: #ffd700;
+}
+
+#weather-button:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#weather-info {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+#weather-info.hidden {
+  display: none;
+}
+
+#temp, #city {
+  color: #ffd700;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
