@@ -1,144 +1,44 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>MapleStudy</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Components</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
-<body>
-  <div id="logo">
-    <img src="img/MapleStudyLogo-removebg.png" alt="Maple Study Logo">
-  </div>
-  <button id="menu-button">
-    <i class="fas fa-lightbulb"></i>
-  </button>
-  <button id="timer-button">
-    <i class="fas fa-hourglass-half"></i>
-  </button>
-
-  <div id="menu-modal">
-    <div class="modal-content">
-      <h2>저장된 할 일 목록</h2>
-      <!-- <div id="saved-todos"></div> -->
-      <form id="todo-form">
-        <div class="input-wrapper">
-          <input type="text" placeholder="What's your task?" id="todo-input">
-          <i class="fas fa-level-down-alt"></i>
-        </div>
-      </form>
-      <ul id="todo-list"></ul>
-    </div>
-  </div>
-  <div id="timer-modal">
-    <div class="modal-content">
-      <h2>타이머</h2>
-      <div id="timer-container">
-        <div id="timer-display">25:00</div>
-        <div id="timer-controls">
-          <button id="start-timer">시작</button>
-          <button id="reset-timer">리셋</button>
-        </div>
-        <div id="timer-options">
-          <button data-time="30">30분</button>
-          <button data-time="60">1시간</button>
-          <button data-time="90">1시간 30분</button>
-          <button data-time="120">2시간</button>
-          <button data-time="150">2시간 30분</button>
-        </div>
-        <div id="volume-control">
-          <i class="fas fa-volume-up"></i>
-          <input type="range" id="volume-slider" min="0" max="100" value="50">
-          <span id="volume-value">50%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form class="hidden" id="login-form">
-    <input required maxlength="15" type="text" placeholder="What is your name?">
-    <button>Log in</button>
-  </form>
-  <!-- <a href="https://www.google.com">google</a> -->
-
-  <h2 id="clock">00:00:00</h2>
-
-  <h1 class="hidden" id="greeting">hello</h1>
-  
-  <div id="quote">
-    <span id="quote-text"></span>
-    <span id="quote-author"></span>
-  </div>
-  <div id="weather-container">
-    <button id="weather-button">
-      <i class="fas fa-thermometer-half"></i>
-    </button>
-    <div id="weather-info" class="hidden">
-      <span id="temp"></span>
-      <span id="city"></span>
-    </div>
+  <!-- Main Content -->
+  <div class="container mx-auto mt-6">
+    <h1 class="text-3xl font-bold">Let's ✏️ & 🎮 </h1>
+    <div id="card1"></div>
+    <div id="card2"></div>
+    <div id="card3"></div>
   </div>
 
-  <div class="quick-links">
-    <div class="links-row">
-      <a href="https://chatgpt.com/" target="_blank">
-        <i class="fas fa-robot"></i>
-        <span>ChatGPT</span>
-      </a>
-      <a href="https://www.perplexity.ai/" target="_blank">
-        <i class="fas fa-brain"></i>
-        <span>Perplexity</span>
-      </a>
-      <a href="https://copilot.microsoft.com/chats/" target="_blank">
-        <i class="fas fa-code"></i>
-        <span>Copilot</span>
-      </a>
-      <a href="https://gemini.google.com/app" target="_blank">
-        <i class="fab fa-google"></i>
-        <span>Gemini</span>
-      </a>
-      <a href="https://claude.ai/new" target="_blank">
-        <i class="fas fa-lightbulb"></i>
-        <span>Claude</span>
-      </a>
-    </div>
-    <div class="links-row">
-      <a href="https://github.com/" target="_blank">
-        <i class="fab fa-github"></i>
-        <span>GitHub</span>
-      </a>
-      <a href="https://colab.research.google.com/" target="_blank">
-        <i class="fas fa-flask"></i>
-        <span>Colab</span>
-      </a>
-      <a href="https://replit.com/~" target="_blank">
-        <i class="fas fa-terminal"></i>
-        <span>Replit</span>
-      </a>
-      <a href="https://excalidraw.com/" target="_blank">
-        <i class="fas fa-pencil-alt"></i>
-        <span>Excalidraw</span>
-      </a>
-      <a href="https://nomadcoders.co/" target="_blank">
-        <i class="fas fa-laptop-code"></i>
-        <span>노마드</span>
-      </a>
-    </div>
-  </div>
+  <!-- Footer -->
+  <div id="footer"></div>
 
-  <script src="js/greeting.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/quotes.js"></script>
-  <script src="js/background.js"></script>
-  <script src="js/todo_new.js"></script>
-  <script src="js/weather.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/timer.js"></script>
+  <script>
+    // HTML 파일 로드 함수
+    function loadComponent(id, file) {
+      fetch(file)
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById(id).innerHTML = data;
+        });
+    }
+
+    // 컴포넌트 로드
+    loadComponent("navbar", "components/navbar.html");
+    loadComponent("card1", "components/card.html");
+    loadComponent("card2", "components/card2.html");
+    loadComponent("card3", "components/card3.html");
+    loadComponent("footer", "components/footer.html");
 
 
-  
+  </script>
 </body>
-
 </html>
