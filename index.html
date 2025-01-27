@@ -3,42 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind Components</title>
+  <title>✏️ & 🎮</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-  <!-- Navbar -->
-  <div id="navbar"></div>
 
-  <!-- Main Content -->
-  <div class="container mx-auto mt-6">
-    <h1 class="text-3xl font-bold">Let's ✏️ & 🎮 </h1>
-    <div id="card1"></div>
-    <div id="card2"></div>
-    <div id="card3"></div>
+<!-- Navbar start -->
+<header class="bg-gray-700">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <!-- Logo -->
+    <div class="flex flex-1 items-center">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">MapleStudy</span>
+        <img src="img/MapleStudy.png" alt="MapleStudy logo" class="max-h-16">
+      </a>
+    </div>
+    <!-- Title -->
+    <div class="flex justify-center flex-1">
+      <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl text-center">
+        MapleStudy
+      </h2>
+    </div>
+    <!-- Slide Menu Button -->
+    <div class="flex flex-1 justify-end">
+      <button id="menuButton" class="text-gray-50 bg-gray-800 p-2 rounded-lg hover:bg-gray-600 focus:outline-none">
+        ☰
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Slide Menu -->
+<div id="slideMenu" class="fixed top-0 right-0 h-full w-64 bg-gray-800 text-gray-50 shadow-lg transform translate-x-full transition-transform">
+  <div class="p-4 flex justify-between items-center border-b border-gray-600">
+    <h3 class="text-lg font-bold">Menu</h3>
+    <button id="closeMenuButton" class="text-gray-50 hover:text-gray-400">
+      ✕
+    </button>
   </div>
-
-  <!-- Footer -->
-  <div id="footer"></div>
-
-  <script>
-    // HTML 파일 로드 함수
-    function loadComponent(id, file) {
-      fetch(file)
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById(id).innerHTML = data;
-        });
-    }
-
-    // 컴포넌트 로드
-    loadComponent("navbar", "components/navbar.html");
-    loadComponent("card1", "components/card.html");
-    loadComponent("card2", "components/card2.html");
-    loadComponent("card3", "components/card3.html");
-    loadComponent("footer", "components/footer.html");
+  <ul class="p-4 space-y-4">
+    <li><a href="#" class="hover:text-gray-400">Home</a></li>
+    <li><a href="#" class="hover:text-gray-400">About</a></li>
+    <li><a href="#" class="hover:text-gray-400">Services</a></li>
+    <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+  </ul>
+</div>
 
 
-  </script>
+<!-- Navbar end -->
+
+
+
+
+<!-- Main Content start -->
+<div class="container mx-auto mt-6">
+<section class="py-12 bg-gray-900 text-gray-100 sm:py-12 lg:py-16">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="max-w-xl mx-auto text-center xl:max-w-2xl">
+          <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6">Connecting my favorite things</h2>
+          <p class="mb-4">✏️ 🎮 🌐 💻 🎹 💪 ☕ 🔥</p>
+
+      </div>
+      <div
+          class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
+          <div class="relative">
+              
+              <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
+                  <div class="p-9">
+                      <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" 
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#111827">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                      </svg>
+                      <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">MapleStudy timer</h3>
+                      <div class="mt-6 text-base text-gray-600 text-left" id="timer-display" >2:30:00</div>
+    <div class="buttons">
+        <button id="start-stop" class="mt-6 text-base text-gray-600 text-left">Start</button>
+        <button id="reset" class="mt-6 text-base text-gray-600 text-left">Reset</button>
+        <button id="decrease" disabled class="mt-6 text-base text-gray-600 text-left">-30 min</button>
+        <button id="increase" class="mt-6 text-base text-gray-600 text-left">+30 min</button>
+    </div>
+
+    
+                  </div>
+              </div>
+          </div>
+          <div class="overflow-hidden bg-white shadow-md rounded-xl">
+              <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" stroke="#111827" stroke-width="2" />
+              </svg>
+                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Engineer's mind</h3>
+                  <p class="mt-6 text-base text-gray-600">
+                    <div id="quote">
+                      <span class="mt-6 text-base text-gray-600 text-left" id="quote-text"></span><br />
+                      <span class="mt-6 text-base text-gray-600 text-left" id="quote-author"></span>
+                    </div>
+                  </p>
+              </div>
+          </div>
+          <div class="relative">
+              
+              <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
+                  <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" stroke="#111827" stroke-width="2" />
+                  </svg>
+                      <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Coding playlist</h3>
+                      <p class="mt-6 text-base text-gray-600">Energetic coding time</p>
+                  </div>
+              </div>
+          </div>
+          <div class="overflow-hidden bg-white shadow-md rounded-xl">
+              <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111827" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Whether</h3>
+                  <p class="mt-6 text-base text-gray-600">
+                    Whether</p>
+              </div>
+          </div>
+          <div class="relative">
+              
+              <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
+                  <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111827" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                  </svg>
+                  
+                      <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Daily Note
+                      </h3>
+                      <p class="mt-6 text-base text-gray-600">Record your day <br />
+                        
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="overflow-hidden bg-white shadow-md rounded-xl">
+              <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111827" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
+                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Profile</h3>
+                  <p class="mt-6 text-base text-gray-600">user info</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+</div>
+<!-- Main Content end -->
+
+<!-- Footer start -->
+<footer class="bg-gray-700 text-white p-4 text-center">
+  &copy; 2025. MapleStudy. No rights reserved.<br /> 
+  Just for fun 😊
+</footer>
+<!-- Footer end -->
+
+  <audio id="start-sound" src="sound\start.mp3"></audio>
+  <audio id="one-minute-sound" src="sound\start.mp3"></audio>
+  <audio id="thirty-minute-sound" src="sound\start.mp3"></audio>
+  <audio id="end-sound" src="sound\start.mp3"></audio>
+  
+  <script src="js/menu.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/playlist.js"></script>
+  <script src="js/whether.js"></script>
+  <script src="js/note.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/quotes.js"></script>
+  
 </body>
 </html>

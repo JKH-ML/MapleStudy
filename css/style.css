@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'MaplestoryLight';
+  src: url('../fonts/MaplestoryLight.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'MaplestoryLight', sans-serif;
+}
