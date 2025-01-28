@@ -7,3 +7,35 @@
 body {
   font-family: 'MaplestoryLight', sans-serif;
 }
+
+.hidden {
+  display: none;
+}
+#weather-container {
+  position: relative;
+  margin: 20px;
+}
+#weather-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#weather-info {
+  
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+#menuButton {
+  background-color: transparent; /* add this line */
+  aspect-ratio: 1; /* add this line */
+  width: 40px; /* adjust the width */
+  height: 40px; /* adjust the height */
+  font-size: 24px; /* adjust the font size */
+}

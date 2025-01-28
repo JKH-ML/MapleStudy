@@ -26,6 +26,14 @@ https://tailwindflex.com/
 메이플 배경화면 이미지
 https://maplestory.nexon.com/promotion/event/2022/20221208/event
 
-아이콘 svg 코드
+아이콘 svg
 https://heroicons.com/
+
+기능 구현
+https://nomadcoders.co/javascript-for-beginners/lobby
+https://chatgpt.com/
+
+사운드
+랄로
+메이플스토리 인게임 
 

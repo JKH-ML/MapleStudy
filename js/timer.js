@@ -15,7 +15,7 @@ const updateDisplay = () => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-    timerDisplay.textContent = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    timerDisplay.textContent = `남은 시간 : ${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     
     increaseButton.disabled = totalSeconds >= 9 * 3600 + 30 * 60;
     decreaseButton.disabled = totalSeconds <= 30 * 60;
