@@ -69,7 +69,7 @@
       <input 
         id="nickname" 
         type="text" 
-        placeholder="닉네임을 입력하세요" 
+        placeholder="닉네임 입력 (한글 2~6자, 영어/숫자 가능)" 
         class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
       >
       <button 
@@ -133,60 +133,65 @@
           </div>
           <!-- 프로필 끝 -->
 
-          <!-- 코딩 플레이리스트 시작 -->
+          <!-- 달력 시작 -->
           <div class="relative">
-              <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-                  <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" stroke="#111827" stroke-width="2" />
-                  </svg>
-                      <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Coding playlist</h3>
-                      <p class="mt-6 text-base text-gray-600"><a href="https://www.youtube.com/playlist?list=PL7ONzTO25Q350iDKyPkSPoiWCtEc7pmXO">
-                        <u>🔥 Power up 🔥</u> </a></p>
-                  </div>
-              </div>
-          </div>
-          <!-- 코딩 플레이리스트 끝 -->
-
-          <!-- 날씨 시작 -->
-          <div class="overflow-hidden bg-white shadow-md rounded-xl">
-              <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111827" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-              </svg>
-                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Whether</h3>
-                  <div id="weather-container">
-                    <button id="weather-button">Get Weather</button>
-                    <div id="weather-info">
-                        뭔 날씨여; 다른 거 ㄱㄱ
+            <div class="relative overflow-hidden text-gray-900 bg-white shadow-md rounded-xl h-full">
+              <div class="max-w-4xl mx-auto">
+                <h1 class="text-center mt-6 mb-6 text-2xl font-bold mb-4">Calendar</h1>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-2 bg-white p-4 rounded shadow">
+                        <div class="flex justify-between items-center mb-4">
+                            <button onclick="changeMonth(-1)" class="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">◀</button>
+                            <h2 id="calendar-title" class="text-xl font-bold"></h2>
+                            <button onclick="changeMonth(1)" class="px-4 py-2 bg-gray-100 rounded hover:bg-gray-200">▶</button>
+                        </div>
+                        <div class="grid grid-cols-7 gap-2 mb-2">
+                            <div class="text-center text-red-500">일</div>
+                            <div class="text-center">월</div>
+                            <div class="text-center">화</div>
+                            <div class="text-center">수</div>
+                            <div class="text-center">목</div>
+                            <div class="text-center">금</div>
+                            <div class="text-center text-blue-500">토</div>
+                        </div>
+                        <div id="calendar" class="grid grid-cols-7 gap-2"></div>
                     </div>
-                  </div>
-              </div>
+                    
+                </div>
+            </div>
+            </div>
           </div>
-          <!-- 날씨 끝 -->
+          <!-- 달력 끝  -->
 
-          <!-- 데일리 노트 시작 -->
+          
+
+          <!-- 투두리스트 시작 -->
           <div class="relative">
-              <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-                  <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#111827" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                  </svg>
-                  
-                      <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Daily Note
-                      </h3>
-                      <p class="mt-6 text-base text-gray-600">Record your day <br />
-                        
-                      </p>
-                  </div>
-              </div>
+            <div class="relative overflow-hidden text-gray-900 bg-white shadow-md rounded-xl h-full">
+              <div class="max-w-4xl mx-auto">
+                <h1 class="text-center mt-6 mb-6 text-2xl font-bold mb-4">To-Do List</h1>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h2 class="text-xl font-bold mb-2">📝 할 일 목록</h2>
+                        <p id="selected-date" class="text-sm text-gray-600 mb-2"></p>
+                        <ul id="todo-list" class="mt-2 space-y-2"></ul>
+                        <input id="todo-input" type="text" class="border p-2 w-full mt-2" placeholder="할 일 입력...">
+                        <button onclick="addTodo()" class="bg-blue-500 text-white px-4 py-2 mt-2 w-full rounded hover:bg-blue-600">추가</button>
+                    </div>
+                </div>
+            </div>
+            </div>
           </div>
-          <!-- 데일리 노트 끝  -->
+          <!-- 투두리스트 끝 -->
+
+          
 
           <!-- 오늘의 꿀통 시작 -->
           <div class="text-center overflow-hidden bg-white shadow-md rounded-xl">
               <div class="p-9"><svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" stroke="#111827" stroke-width="2" />
               </svg>
-                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Today's tip</h3>
+                  <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Pro-tip</h3>
                   <p class="mt-6 text-base text-gray-600">
                     <div id="quote">
                       <span class="mt-6 text-base text-gray-600 text-left" id="quote-text"></span><br />
@@ -196,6 +201,24 @@
               </div>
           </div>
           <!-- 오늘의 꿀통 끝 -->
+
+          <!-- 코딩 플레이리스트 시작 -->
+          <div class="relative">
+            <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
+              <div class="p-9">
+                <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" stroke="#111827" stroke-width="2" />
+                </svg>
+                <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Coding playlist</h3>
+                <p class="mt-6 text-base text-gray-600">
+                  <a href="https://www.youtube.com/playlist?list=PL7ONzTO25Q350iDKyPkSPoiWCtEc7pmXO">
+                    <u>🔥 Power up 🔥</u> 
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 코딩 플레이리스트 끝 -->
           
       </div>
     </div>
