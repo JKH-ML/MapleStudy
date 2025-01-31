@@ -127,7 +127,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                   </svg>
                   <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Character info.</h3>
-                  <p class="mt-6 text-base text-gray-600">닉네임을 입력하세요<br />
+                  <p class="mt-6 text-base text-gray-600">
+                    닉네임을 검색해 보세요.<br />
+                  </p>
                 </div>
               </div>
           </div>
@@ -203,21 +205,27 @@
           <!-- 오늘의 꿀통 끝 -->
 
           <!-- 코딩 플레이리스트 시작 -->
-          <div class="relative">
-            <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-              <div class="p-9">
-                <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" stroke="#111827" stroke-width="2" />
-                </svg>
-                <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Coding playlist</h3>
-                <p class="mt-6 text-base text-gray-600">
-                  <a href="https://www.youtube.com/playlist?list=PL7ONzTO25Q350iDKyPkSPoiWCtEc7pmXO">
-                    <u>🔥 Power up 🔥</u> 
-                  </a>
-                </p>
-              </div>
+          <div class="bg-gray-100  flex items-center justify-center p-4">
+            <!-- iPod 본체 -->
+            <div class="w-80 bg-[#3f3c3e] rounded-3xl shadow-xl p-4 space-y-4">
+                <!-- 스크린 영역 -->
+                <div class="bg-black rounded-lg p-2">
+                    <iframe 
+                        class="w-full aspect-[4/3] rounded"
+                        src="https://www.youtube.com/embed/videoseries?list=PL7ONzTO25Q350iDKyPkSPoiWCtEc7pmXO"
+                        title="YouTube playlist player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+        
+                <!-- 장식용 휠 -->
+                <div class="bg-[#212021] rounded-full p-8 relative shadow">
+                    <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-gradient-to-b from-[#212021] to-[#3f3c3e] shadow"></div>
+                </div>
             </div>
-          </div>
+        </div>
           <!-- 코딩 플레이리스트 끝 -->
           
       </div>
