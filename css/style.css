@@ -11,26 +11,7 @@ body {
 .hidden {
   display: none;
 }
-#weather-container {
-  position: relative;
-  margin: 20px;
-}
-#weather-button {
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#weather-info {
-  
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  color: #333;
-}
+
 
 #menuButton {
   background-color: transparent; /* add this line */
@@ -38,4 +19,60 @@ body {
   width: 40px; /* adjust the width */
   height: 40px; /* adjust the height */
   font-size: 24px; /* adjust the font size */
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.question-mark {
+  width: 24px;
+  height: 24px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background: #1f2937;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+}
+
+.tooltip.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltip-container:hover .tooltip {
+  display: block;
 }

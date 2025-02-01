@@ -7,10 +7,10 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-700">
+<body class="bg-orange-30">
 
 <!-- Navbar start -->
-<header class="bg-gray-700">
+<header class="bg-orange-30">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <!-- Logo -->
     <div class="flex flex-1 items-center">
@@ -20,14 +20,16 @@
       </a>
     </div>
     <!-- Title -->
-    <div class="flex justify-center flex-1">
-      <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl text-center">
-        MapleStudy
-      </h2>
-    </div>
+    <a href="#" class="-m-1.5 p-1.5">
+      <div class="flex justify-center flex-1">
+        <h2 class="text-3xl font-bold leading-tight text-orange-500 sm:text-4xl xl:text-5xl text-center">
+          MapleStudy
+        </h2>
+      </div>
+    </a>
     <!-- Slide Menu Button -->
     <div class="flex flex-1 justify-end">
-      <button id="menuButton" class="text-gray-50  p-5 rounded-lg hover:bg-gray-600 focus:outline-none">
+      <button id="menuButton" class="text-black  p-50 rounded-lg hover:bg-gray-600 focus:outline-none">
         ☰
       </button>
     </div>
@@ -36,11 +38,28 @@
 
 <!-- Slide Menu -->
 <div id="slideMenu" class="z-50 fixed top-0 right-0 h-full w-64 bg-gray-800 text-gray-50 shadow-lg transform translate-x-full transition-transform">
+  <!-- <div id="weather-container">
+    <button id="weather-button">위치 확인</button>
+    <div id="weather-info"></div>
+    <div id="temp"></div>
+    <div id="city"></div>
+  </div> -->
   <div class="p-4 flex justify-between items-center border-b border-gray-600">
-    <h3 class="text-lg font-bold">AI services</h3>
+    <h3 class="text-lg font-bold">Weather</h3>
     <button id="closeMenuButton" class="text-gray-50 hover:text-gray-400">
       ✕
     </button>
+  </div>
+  
+  <ul class="p-4 space-y-4">
+    <li><button id="weather-button">Click to check weather</button></li>
+    <li><div id="weather-info"></div></li>
+    <li><div id="city"></div></li>
+    <li><div id="temp"></div></li>
+    
+  </ul>
+  <div class="p-4 flex justify-between items-center border-b border-gray-600">
+    <h3 class="text-lg font-bold">AI</h3>
   </div>
   <ul class="p-4 space-y-4">
     <li><a href="https://chatgpt.com/" target="_blank" class="hover:text-gray-400">Chatgpt(OpenAI)</a></li>
@@ -49,11 +68,13 @@
     <li><a href="https://copilot.microsoft.com/chats/" target="_blank" class="hover:text-gray-400">Copilot(Microsoft)</a></li>
     <li><a href="https://clova-x.naver.com/" target="_blank" class="hover:text-gray-400">Clova-X(Naver)</a></li>
     <li><a href="https://www.perplexity.ai/" target="_blank" class="hover:text-gray-400">Perplexity: web search</a></li>
-    <li><a href="https://suno.com/create" target="_blank" class="hover:text-gray-400">Suno: music</a></li>
-    <li><a href="https://colab.research.google.com/" target="_blank" class="hover:text-gray-400">Colab: python</a></li>
-    <li><a href="https://www.midjourney.com/" target="_blank" class="hover:text-gray-400">Midjourney: image</a></li>
-    
-
+  </ul>
+  <div class="p-4 flex justify-between items-center border-b border-gray-600">
+    <h3 class="text-lg font-bold">Project</h3>
+  </div>
+  <ul class="p-4 space-y-4">
+    <li><a href="https://github.com/JKH-ML/PaintGround" target="_blank" class="hover:text-gray-400">PaintGround (JS-study)</a></li>
+    <li><a href="https://github.com/JKH-ML/ttt2omok" target="_blank" class="hover:text-gray-400">TikTakToe (React-study)</a></li>
   </ul>
 </div>
 <!-- Navbar end -->
@@ -62,55 +83,71 @@
 
 
 <!-- Main Content start -->
+ 
  <!-- 닉네임 검색 시작-->
- <div class="bg-gray-900 p-6">
-  <div class="max-w-3xl mx-auto">
-    <div class="mb-6 flex gap-2">
+ <div class="bg-orange-100 p-8 flex justify-center">
+  <div class="max-w-3xl w-full">
+    <div class="flex items-center gap-4 justify-center">
       <input 
         id="nickname" 
         type="text" 
-        placeholder="닉네임 입력 (한글 2~6자, 영어/숫자 가능)" 
-        class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+        placeholder="닉네임 입력" 
+        class="w-2/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
       >
       <button 
         id="myButton"
-        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-      >검색</button>
+        class="px-3 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors ">검색</button>
+      <div class="tooltip-container relative">
+        <div class="question-mark cursor-pointer text-white bg-gray-600 px-2 py-1 rounded-full">?</div>
+        <div class="tooltip absolute left-1/2 transform -translate-x-1/2 mt-2 p-3 bg-black-600 text-white text-sm rounded shadow-lg hidden">
+          <b>"Let’s learn something while playing game"</b>
+        </div>
+      </div>
     </div>
   </div>
 </div>
  <!-- 닉네임 검색 끝 -->
-
+  
 <div class="container mx-auto mt-6">
-  <section class="py-12 bg-gray-900 text-gray-100 sm:py-12 lg:py-16">
+  <section class="py-12 bg-orange-100 sm:py-12 lg:py-16 rounded-md shadow-sm">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
+      <div class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-1 mb-1 mr-6 ml-6 sm:text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:text-left ">
+
           
           <!-- 타이머 시작 -->
           <div class="relative">
               <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
                   <div class="p-9 ">
-                      <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" 
+                      <svg class="w-12 h-12 mx-auto text-black sm:mx-0" viewBox="0 0 24 24" fill="none" 
                       xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#111827">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                       </svg>
-                      <h3 class="text-center mt-6 mb-6 text-2xl font-bold text-gray-900 sm:mt-10">MapleStudy timer</h3>
-                        <div class=" text-center justify-center   relative px-3 py-5 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-violet-600 text-gray-900 bg-gray-200 dark:bg-gray-400 dark:text-gray-200 " id="timer-display" >남은 시간 : 2:30:00</div>
+                      <div class="flex items-center gap-4 justify-center">
+                        <h3 class="text-center mt-6 mb-6 text-2xl font-bold text-black sm:mt-10">Maple timer</h3>
+                        <div class="tooltip-container relative">
+                          <div class="question-mark cursor-pointer text-white bg-gray-600 px-2 py-1 rounded-full mt-4">?</div>
+<div class="tooltip absolute left-1/2 transform -translate-x-1/2 mt-2 py-3 bg-gray-600 text-white text-xs rounded shadow-lg hidden">
+                            ✓ 1분 알람<br />
+                            ✓ 30분 알람<br />
+                          </div>
+                        </div>
+                      </div>
+                        <div class=" text-center justify-center   relative px-3 py-5 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-orange-600 text-black bg-gray-200" id="timer-display" >남은 시간 : 2:30:00</div>
                         <div class="flex flex-wrap items-start justify-center ">
-                        <button id="start-stop" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-violet-600 text-gray-900 bg-gray-200 dark:bg-gray-400 dark:text-gray-200 " >
-                            <span class="text-sm">Start!</span>
+                        <button id="start-stop" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-orange-600 text-black bg-gray-200" >
+                            <span class="text-sm">Start</span>
                         </button>
                         
-                        <button id="reset" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-violet-600 text-gray-900 bg-gray-200 dark:bg-gray-400 dark:text-gray-200 " >
+                        <button id="reset" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-orange-600 text-black bg-gray-200" >
                             <span class="text-sm">Reset</span>
                         </button>
                         </div>
                         <div class="flex flex-wrap items-start justify-center ">
 
-                        <button id="decrease" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-violet-600 text-gray-900 bg-gray-200 dark:bg-gray-400 dark:text-gray-200 " >
+                        <button id="decrease" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-orange-600 text-black bg-gray-200" >
                             <span class="text-sm">-30</span>
                         </button>
-                        <button id="increase" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-violet-600 text-gray-900 bg-gray-200 dark:bg-gray-400 dark:text-gray-200 " >
+                        <button id="increase" class=" text-center relative px-3 py-1 m-2 rounded-md shadow-sm sm:py-2 sm:text-base ring ring-transparent group md:px-4 hover:ring hover:ring-opacity-50 focus:ring-opacity-50 hover:ring-orange-600 text-black bg-gray-200" >
                             <span class="text-sm">+30</span>
                         </button>
                         </div>
@@ -174,11 +211,11 @@
                 <h1 class="text-center mt-6 mb-6 text-2xl font-bold mb-4">To-Do List</h1>
                 <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white p-4 rounded shadow">
-                        <h2 class="text-xl font-bold mb-2">📝 할 일 목록</h2>
+                        <h2 class="text-xl font-bold mb-2 text-center">✏️ 🎮 💻 🎹 💪 💰 🍴 📝 </h2>
                         <p id="selected-date" class="text-sm text-gray-600 mb-2"></p>
                         <ul id="todo-list" class="mt-2 space-y-2"></ul>
                         <input id="todo-input" type="text" class="border p-2 w-full mt-2" placeholder="할 일 입력...">
-                        <button onclick="addTodo()" class="bg-blue-500 text-white px-4 py-2 mt-2 w-full rounded hover:bg-blue-600">추가</button>
+                        <button onclick="addTodo()" class="bg-orange-400 text-white px-4 py-2 mt-2 w-full rounded hover:bg-orange-600">추가</button>
                     </div>
                 </div>
             </div>
@@ -205,7 +242,7 @@
           <!-- 오늘의 꿀통 끝 -->
 
           <!-- 코딩 플레이리스트 시작 -->
-          <div class="bg-gray-100  flex items-center justify-center p-4">
+          <div class="text-center overflow-hidden bg-white shadow-md rounded-xl  flex items-center justify-center p-4">
             <!-- iPod 본체 -->
             <div class="w-80 bg-[#3f3c3e] rounded-3xl shadow-xl p-4 space-y-4">
                 <!-- 스크린 영역 -->
@@ -213,10 +250,7 @@
                     <iframe 
                         class="w-full aspect-[4/3] rounded"
                         src="https://www.youtube.com/embed/videoseries?list=PL7ONzTO25Q350iDKyPkSPoiWCtEc7pmXO"
-                        title="YouTube playlist player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
+                        >
                     </iframe>
                 </div>
         
@@ -235,9 +269,11 @@
 <!-- Main Content end -->
 
 <!-- Footer start -->
-<footer class="bg-gray-700 text-white p-4 text-center">
+<footer class="bg-orange-100 text-black p-4 text-center mt-6">
+  E-mail : banghak2da@gmail.com <br /> 
+  <a href="https://velog.io/@jkh" target="_blank" class="hover:text-gray-400">Blog : https://velog.io/@jkh/posts</a><br /> 
   &copy; 2025. MapleStudy. No rights reserved.<br /> 
-  Just for fun 😊
+  Just for fun 😊 
 </footer>
 <!-- Footer end -->
 
@@ -248,7 +284,7 @@
   
   <script src="js/menu.js"></script>
   <script src="js/timer.js"></script>
-  <script src="js/playlist.js"></script>
+  <script src="js/tooltip.js"></script>
   <script src="js/whether.js"></script>
   <script src="js/note.js"></script>
   <script src="js/profile.js"></script>

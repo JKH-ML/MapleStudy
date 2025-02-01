@@ -44,7 +44,7 @@ function renderCalendar() {
             <button onclick="selectDate('${dateStr}')" 
                 class="p-2 border rounded hover:bg-gray-100 
                 ${color} 
-                ${hasTodo ? (completed ? 'bg-green-200' : 'bg-yellow-200') : ''} 
+                ${hasTodo ? (completed ? 'bg-green-200' : 'bg-orange-200') : ''} 
                 ${isSelected ? 'ring-2 ring-blue-500 font-bold' : ''}"
             >${d}</button>`;
     }
@@ -63,8 +63,11 @@ function renderTodoList() {
     (todos[selectedDate] || []).forEach((todo, index) => {
         list.innerHTML += `
             <li class="flex justify-between items-center p-2 border rounded hover:bg-gray-50 ${todo.done ? 'line-through text-gray-500' : ''}">
-                <span onclick="toggleDone(${index})" class="cursor-pointer">${todo.text}</span>
-                <button onclick="deleteTodo(${index})" class="text-red-500 hover:text-red-700">❌</button>
+                <span class="cursor-pointer">${todo.text}</span>
+                <div class="ml-auto flex space-x-2">
+                    <button onclick="toggleDone(${index})" class="text-green-500 hover:text-green-700">✅</button>
+                    <button onclick="deleteTodo(${index})" class="text-red-500 hover:text-red-700">❌</button>
+                </div>
             </li>`;
     });
 }
