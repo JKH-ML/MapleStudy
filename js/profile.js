@@ -41,6 +41,9 @@ async function handleSubmit() {
     const doc = parser.parseFromString(htmlText, "text/html");
     const characterRow = doc.querySelector("tr.search_com_chk");
 
+    // 영어 닉네임의 경우, 대소문자가 정확하게 일치 하지 않으면 검색에 실패함
+    // -> 아직 이유를 찾지 못함...
+    
     if (!characterRow) {
       resultDiv.innerHTML = `
     <div class="w-full h-full bg-gray-100 px-10 pt-10">

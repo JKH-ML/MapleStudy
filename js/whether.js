@@ -2,8 +2,8 @@ const weatherButton = document.querySelector("#weather-button");
 const weatherInfo = document.querySelector("#weather-info");
 const temp = document.querySelector("#temp");
 const city = document.querySelector("#city");
-
 const API_KEY = "1940efdbd399dd50c770bba7984660bd"; // OpenWeather API 키
+
 function onGeoSuccess(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
@@ -18,12 +18,10 @@ function onGeoSuccess(position) {
         .then(()=> weatherButton.classList.add("hidden"))
         .catch(error => {
             console.error("날씨 정보를 가져오는데 실패했습니다:", error);
-            
         });
 }
 
 function onGeoError() {
-    
 }
 
 function handleWeatherClick() {

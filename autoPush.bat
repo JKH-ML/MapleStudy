@@ -1,4 +1,5 @@
 @echo off
+chcp 65001
 cd /d "C:\study\web\MapleStudy"
 set date=%date:~0,4%%date:~5,2%%date:~8,2%
 git add .

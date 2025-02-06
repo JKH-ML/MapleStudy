@@ -1,28 +1,61 @@
 const quotes = [
     {
-      quote: "When something is important enough, you do it even if the odds are not in your favor.",
-      author: "Elon Musk"
+      quote: "무언가가 충분히 중요하다면 확률이 당신에게 유리하지 않더라도 시작하라.",
+      author: "일론 머스크"
     },
     {
-      quote: "If things are not failing, you are not innovating enough.",
-      author: "Elon Musk"
+      quote: `부끄럽게도 저는 비디오 게임을 좋아합니다. 그것이 제가 어렸을 때 소프트웨어 엔지니어링에 빠지게 된 이유입니다. 더 나은 비디오 게임을 하고 더 나은 컴퓨터를 사기 위해 돈을 벌고 싶었습니다. 세상을 구하는 것과 같은 목적은 아닙니다.`,
+      author: "일론 머스크"
     },
     {
-      quote: "Any product that needs a manual to work is broken.",
-      author: "Elon Musk"
+      quote: `어렸을 땐 어둠이 정말 무서웠습니다. 그러나 그때 나는 어두움이란 가시 파장인 400~700나노미터의 광자가 없다는 것을 의미한다는 것을 이해하게 되었습니다. 그러다가 광자의 부족을 두려워하는 것은 정말 어리석은 일이라고 생각했습니다. 그 이후로는 더 이상 어둠이 두렵지 않았습니다.`,
+      author: "일론 머스크"
     },
     {
-      quote: "Your time is limited, so don’t waste it living someone else’s life.",
-      author: "Steve Jobs"
+      quote: `혹시 저 때문에 감정이 상한 사람이 있다면, 그저 이렇게 말하고 싶군요. 저는 전기차를 재창조했고, 지금은 사람들을 로켓에 태워 화성으로 보내려 하고 있습니다. 그런 제가 차분하고 정상적인 친구일 거라고 생각하셨나요?`,
+      author: "일론 머스크"
     },
     {
-      quote: "Failure is simply the opportunity to begin again more intelligently.",
-      author: "Henry Ford"
+      quote: "첫 번째 단계는 무언가가 가능하다는 것을 확인하는 것입니다. 그러면 확률이 발생할 것입니다.",
+      author: "일론 머스크"
     },
     {
-      quote: "Simplicity is the ultimate sophistication.",
-      author: "Leonardo da Vinci"
-    }
+      quote: "페이팔 매각으로 얻은 수익은 1억 8천만 달러였습니다. 저는 스페이스X에 1억 달러, Tesla에 7천만 달러, 솔라 시티에 1천만 달러를 투자했습니다. 집세를 내기 위해 돈을 빌려야 했습니다.",
+      author: "일론 머스크"
+    },
+    {
+      quote: "우리는 이미 사이보그입니다. 당신의 스마트폰과 컴퓨터는 당신의 확장이지만 인터페이스는 매우 느린 손가락 움직임이나 말을 통해 이루어집니다.",
+      author: "일론 머스크"
+    },
+    {
+      quote: "수백 년 전으로 돌아간다면 오늘날 우리가 당연하게 여기는 것이 마법처럼 보일 것입니다. 장거리에 있는 사람들과 대화할 수 있고, 이미지를 전송하고, 하늘을 날고, 오라클처럼 방대한 양의 데이터에 액세스할 수 있습니다. 이것들은 모두 몇백 년 전에는 마법으로 여겨졌을 것입니다.",
+      author: "일론 머스크"
+    },
+    {
+      quote: "저는 세상을 변화시키거나 미래에 영향을 미치거나 사람들이 주목할 만한 놀라운 신기술에 관심이 있습니다. 그리고 사람들은 \"와, 어떻게 그런 일이 일어났지? 어떻게 그게 가능합니까?\"라고 말하는 것입니다.",
+      author: "일론 머스크"
+    },
+    {
+      quote: `나는 높은 개념을 가지고 허세를 부리는 데에 시간을 보내지 않는다. 나는 엔지니어링 및 제조 문제를 해결하는 데 시간을 보낸다.
+`,
+      author: "일론 머스크"
+    },
+    {
+      quote: `작동하기 위해 설명서가 필요한 제품은 고장이 납니다.`,
+      author: "일론 머스크"
+    },
+    {
+      quote: `사람들은 자신이 열정을 갖고 있는 것을 추구해야 합니다. 그것은 그들을 다른 어떤 것보다 행복하게 만들 것입니다.`,
+      author: "일론 머스크"
+    },
+    {
+      quote: "우리는 서로가 아닌 별을 향해서 로켓을 쏘아야 합니다.",
+      author: "일론 머스크"
+    },
+    {
+      quote: "절대. 저는 절대 포기하지 않습니다.",
+      author: "일론 머스크"
+    },
   ];
 
 const quote = document.querySelector("#quote-text");
