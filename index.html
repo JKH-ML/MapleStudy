@@ -38,44 +38,53 @@
 
 <!-- Slide Menu -->
 <div id="slideMenu" class="z-50 fixed top-0 right-0 h-full w-64 bg-gray-800 text-gray-50 shadow-lg transform translate-x-full transition-transform">
-  <!-- <div id="weather-container">
-    <button id="weather-button">위치 확인</button>
-    <div id="weather-info"></div>
-    <div id="temp"></div>
-    <div id="city"></div>
-  </div> -->
+  
   <div class="p-4 flex justify-between items-center border-b border-gray-600">
-    <h3 class="text-lg font-bold">Weather</h3>
+    <h3 class="text-lg font-bold">MapleStudy</h3>
     <button id="closeMenuButton" class="text-gray-50 hover:text-gray-400">
       ✕
     </button>
   </div>
   
   <ul class="p-4 space-y-4">
-    <li><button id="weather-button">Click to check weather</button></li>
+    <li>
+      <form class="flex justify-between items-center " id="login-form">
+        <input class="w-2/3 px-2 py-1 border border-gray-300 bg-orange-100 text-black" type="text" placeholder="Name" id="login-id"/>
+        <button class="px-3 py-1 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">로그인</button>
+      </form>
+    </li>
+    <li class="hidden" id="after-login">
+      <span id="sayHello"></span>
+      <button class="px-3 py-1 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors" id="logout-btn">로그아웃</button>
+      <div id="current-time" class="mt-4"></div>
+      <button id="weather-button" class="text-skyblue-500">Click to check weather</button>
+      <div id="weather-info"></div>
+      <div id="city"></div>
+      <div id="temp"></div>
+    </li>
+    <!-- <li><button id="weather-button">Click to check weather</button></li>
     <li><div id="weather-info"></div></li>
     <li><div id="city"></div></li>
-    <li><div id="temp"></div></li>
+    <li><div id="temp"></div></li> -->
     
   </ul>
   <div class="p-4 flex justify-between items-center border-b border-gray-600">
     <h3 class="text-lg font-bold">AI</h3>
   </div>
   <ul class="p-4 space-y-4">
-    <li><a href="https://chatgpt.com/" target="_blank" class="hover:text-gray-400">Chatgpt(OpenAI)</a></li>
-    <li><a href="https://gemini.google.com/app" target="_blank" class="hover:text-gray-400">Gemini(Google)</a></li>
-    <li><a href="https://claude.ai/new" target="_blank" class="hover:text-gray-400">Claude(Amazon)</a></li>
-    <li><a href="https://copilot.microsoft.com/chats/" target="_blank" class="hover:text-gray-400">Copilot(Microsoft)</a></li>
-    <li><a href="https://clova-x.naver.com/" target="_blank" class="hover:text-gray-400">Clova-X(Naver)</a></li>
-    <li><a href="https://www.perplexity.ai/" target="_blank" class="hover:text-gray-400">Perplexity: web search</a></li>
+    <li><a href="https://chatgpt.com/" target="_blank" class="hover:text-gray-400">ChatGPT</a></li>
+    <li><a href="https://gemini.google.com/app" target="_blank" class="hover:text-gray-400">Gemini</a></li>
+    <li><a href="https://claude.ai/new" target="_blank" class="hover:text-gray-400">Claude</a></li>
+    <li><a href="https://copilot.microsoft.com/chats/" target="_blank" class="hover:text-gray-400">Copilot</a></li>
+    <li><a href="https://clova-x.naver.com/" target="_blank" class="hover:text-gray-400">Clova-X</a></li>
+    <li><a href="https://www.perplexity.ai/" target="_blank" class="hover:text-gray-400">Perplexity</a></li>
   </ul>
-  <div class="p-4 flex justify-between items-center border-b border-gray-600">
+  <!-- <div class="p-4 flex justify-between items-center border-b border-gray-600">
     <h3 class="text-lg font-bold">Project</h3>
   </div>
   <ul class="p-4 space-y-4">
-    <li><a href="https://github.com/JKH-ML/PaintGround" target="_blank" class="hover:text-gray-400">PaintGround (JS-study)</a></li>
-    <li><a href="https://github.com/JKH-ML/ttt2omok" target="_blank" class="hover:text-gray-400">TikTakToe (React-study)</a></li>
-  </ul>
+    
+  </ul> -->
 </div>
 <!-- Navbar end -->
 
@@ -96,12 +105,15 @@
       >
       <button 
         id="myButton"
-        class="px-3 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors ">검색</button>
+        class="px-3 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">검색</button>
       <div class="tooltip-container relative">
+        <a href="https://github.com/JKH-ML/MapleStudy/blob/main/README.md" target="_blank">
         <div class="question-mark cursor-pointer text-white bg-gray-600 px-2 py-1 rounded-full">?</div>
         <div class="tooltip absolute left-1/2 transform -translate-x-1/2 mt-2 p-3 bg-black-600 text-white text-sm rounded shadow-lg hidden">
-          <b>열심히 공부해서 정상화를 대비합시다.</b>
+          <b>README.md</b><br />
+          클릭: 깃허브 링크로 이동
         </div>
+        </a>
       </div>
     </div>
   </div>

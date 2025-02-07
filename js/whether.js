@@ -12,8 +12,8 @@ function onGeoSuccess(position) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            temp.innerText = `${Math.round(data.main.temp)}°C`;
-            city.innerText = data.name;
+            temp.innerText = `온도: ${Math.round(data.main.temp)}°C`;
+            city.innerText = `위치: ${data.name}`;
         })
         .then(()=> weatherButton.classList.add("hidden"))
         .catch(error => {
